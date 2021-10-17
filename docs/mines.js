@@ -334,7 +334,11 @@ function reveal(i, j) {
     // for(let i = 0; i<height; i++){
     //     for(let j = 0; j<width; j++){
         if(boxList[i][j].open && !boxList[i][j].bomb){
-            boxList[i][j].tile.style.backgroundColor = openColor;
+            boxList[i][j].tile.style.backgroundColor = openColor; 
+
+            if(boxList[i][j].flagged){ 
+                boxList[i][j].tile.removeChild(boxList[i][j].flag);
+            }
             
             if(boxList[i][j].number == 1){
                 boxList[i][j].tile.style.color = numColor.one;

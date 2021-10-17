@@ -169,7 +169,7 @@ function createGrid() {
 }
 function createBomb() { 
     let lista = [];
-    for (let b = 0; b<=numOfBomb; b++){
+    for (let b = 0; b<numOfBomb; b++){
         let i = Math.floor(Math.random() * height);
         let j = Math.floor(Math.random() * width); 
         while(lista.includes(`${i}${j}`)){ 

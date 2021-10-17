@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="mines.css">
+        <title>Minesweeper</title>
+    </head>
+    <body>
+        <div class="container-main">
+            <h1 class="title">Sam's Minesweeper</h1>
+            <div class='info'>
+                <div class="nf">00</div>
+                <div class='center'>
+                    <button id="flgbtn" class="btn">Mine</button>
+                    <img id='emoji'>
+                    <button id="reset" class="btn">-----</button>
+                </div>
+                <div class='clock'>
+                    <span id='minutes'>00</span>
+                    <span>:</span>
+                    <span id='seconds'>00</span>
+                </div>
+            </div>
+            
+            <div id='main'>
+            </div>
+        </div>
+        <div class="win">
+            <div class="card">
+                <h1 class="title-win"></h1>
+                <button class="winbtn">ok</button>
+            </div>
+            <div class="space"></div>
+        </div>
+        <script src="mines.js" async defer></script>
+    </body>
+</html>

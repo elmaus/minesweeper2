@@ -1,0 +1,148 @@
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Comic Sans';
+    font-weight: 700;
+    background-color: rgb(66, 62, 62);
+}
+
+.title {
+    color:rgb(237, 240, 94);
+    font-size: 34px;
+    text-align: center;
+    padding-top:20px;
+}
+
+.container-main {
+    width:435px;
+    margin:auto;
+}
+
+.info {
+    margin-top: 50px;
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding:10px;
+    justify-content: center;
+}
+
+.center {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding:0px 20px;
+}
+#emoji {
+    position:relative;
+    width:60px;
+    height:auto;
+    margin:auto 20px;
+}
+
+.btn {
+    font-family: 'Comic Sans MS', 'Comic Sans';
+    font-weight: bold;
+    color:rgb(20, 247, 160);
+    font-size: 20px;
+    width:70px;
+    background: none;
+    border:none;
+    margin:auto;
+}
+
+.clock {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:rgb(57, 140, 250);
+    font-size: 25px;
+}
+
+.nf {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:rgb(243, 67, 67);
+    font-size: 25px;
+}
+
+#main {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-radius:2px;
+    grid-row-gap:2px;
+    grid-column-gap:2px;
+    padding:3px;
+    width:435px;
+    height: 520px;
+    border: solid rgb(11, 6, 46) 1px;
+    margin:auto;
+    background-color: rgb(60, 120, 153);
+    margin-bottom:30px;
+}
+
+#main div {
+    font-size: 21px;
+    border-radius:8px;
+    padding:3px;
+    background-color: rgb(247, 249, 250);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img, .flag{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.win {
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width:100%;
+    background-color: rgb(11, 6, 46, .7)
+}
+
+.card {
+    background-color: rgb(224, 234, 240);
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    padding:35px 20px;
+    border-radius: 15px;
+    margin:150px auto 500px auto;
+}
+
+.title-win {
+    margin-bottom:15px;
+    color:rgb(11, 6, 46)
+}
+
+.winbtn {
+    border-radius:10px;
+    background-color: rgb(37, 37, 179);
+    font-family: 'Comic Sans MS', 'Comic Sans';
+    margin-top:20px;
+    padding:7px 20px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(233, 235, 243);
+    border-left:solid 3px rgb(233, 235, 243);
+    border-bottom:solid 3px rgb(233, 235, 243);
+    box-shadow: 1px 1px 5px 1px rgba(11, 6, 46, .7);
+
+}
+

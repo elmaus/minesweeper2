@@ -445,7 +445,7 @@ function listen() {
                                 numberOfFlag.textContent = `-0${flagNum}`;
                             }
                             else if(flagNum < 0 && flagNum < -9){
-                                numberOfFlag.textContent = '${Math.abs(flagNum)}';
+                                numberOfFlag.textContent = '${flagNum}';
                             }
                             else {
                                 numberOfFlag.textContent = "00";

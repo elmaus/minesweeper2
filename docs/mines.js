@@ -430,19 +430,13 @@ function listen() {
                                 boxList[i][j].flagged = false;
                                 flagNum++
                             }
-                            let number = numOfBomb;
-                            for(let i=0; i<height; i++){
-                                for(let j=0; j<width; j++){
-                                    if(boxList[i][j].flagged){
-                                        number--;
-                                    }
-                                }
-                            }
+                            
+
                             if(flagNum < 10){
                                 numberOfFlag.textContent = `0${flagNum}`;
                             }
                             else if(flagNum < 0 && flagNum > -10){
-                                numberOfFlag.textContent = `-0${Math.abs(flagNum)}`;
+                                numberOfFlag.textContent = `-0${flagNum}`;
                             }
                             else if(flagNum < 0 && flagNum < -9){
                                 numberOfFlag.textContent = '${flagNum}';

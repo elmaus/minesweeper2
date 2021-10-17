@@ -65,6 +65,7 @@ function stopGame() {
         for(let l=0; l<width; l++){
             if(boxList[k][l].flagged){
                 boxList[k][l].tile.removeChild(boxList[k][l].flag); 
+                boxList[k][l].open = true;
                 reveal(k, l);
             }
             else if(boxList[k][l].bomb){

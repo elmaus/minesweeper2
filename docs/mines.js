@@ -428,7 +428,7 @@ function listen() {
                     }else {
                         if(!gameOver){
                             if(!boxList[i][j].flagged){
-                                if(flagNum > 1){
+                                if(flagNum > 0){
                                     boxList[i][j].tile.appendChild(boxList[i][j].flag);
                                     boxList[i][j].flagged = true; 
                                     flagNum--;

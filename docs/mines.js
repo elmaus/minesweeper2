@@ -171,7 +171,7 @@ function createBomb() {
     for (let b = 0; b<numOfBomb; b++){
         let i = Math.floor(Math.random() * height);
         let j = Math.floor(Math.random() * width); 
-        while(lista.includes(`${i}${j}')){ 
+        while(lista.includes(`${i}${j}`)){ 
             i = Math.floor(Math.random() * height);
             j = Math.floor(Math.random() * width);
         }

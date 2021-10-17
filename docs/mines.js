@@ -166,10 +166,15 @@ function createGrid() {
         }
     }
 }
-function createBomb() {
+function createBomb() { 
+    let lista = [];
     for (let b = 0; b<numOfBomb; b++){
         let i = Math.floor(Math.random() * height);
-        let j = Math.floor(Math.random() * width);
+        let j = Math.floor(Math.random() * width); 
+        while(lista.includes(`${i}${j}')){ 
+            i = Math.floor(Math.random() * height);
+            j = Math.floor(Math.random() * width);
+        }
         boxList[i][j].bomb = true;
     }
     // for(let i = 0; i<height; i++){
@@ -476,7 +481,7 @@ resetbtn.addEventListener('click', event => {
         clearInterval(timer);
         minutes.textContent = '00';
         seconds.textContent = '00';
-        numberOfFlag.textContent = '00';
+        numberOfFlag.textContent = numOfBomb;
         numberOfOpened = 0;
         flagNum = numBomb;
         resetbtn.textContent = '-----'

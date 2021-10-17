@@ -60,7 +60,8 @@ class Box {
 
 function stopGame() {
     gameOver = true;
-    numberOfOpened = 0;
+    numberOfOpened = 0; 
+    numberOfFlag ="00";
     emoji.src = 'sad.png'
     for(let k=0; k<height; k++){
         for(let l=0; l<width; l++){

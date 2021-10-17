@@ -251,7 +251,7 @@ function open(i, j){
         return;
     }
     boxList[i][j].open = true;
-    else if(boxList[i][j].flagged){
+    if(boxList[i][j].flagged){
         return
     }
     else if(boxList[i][j].number > 0){

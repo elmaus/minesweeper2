@@ -62,7 +62,7 @@ class Box {
 function stopGame() {
     gameOver = true;
     numberOfOpened = 0;
-    flagNum = numberOfBomb; 
+    flagNum = numOfBomb; 
     emoji.src = 'sad.png'
     for(let k=0; k<height; k++){
         for(let l=0; l<width; l++){
@@ -430,7 +430,7 @@ function listen() {
                                 boxList[i][j].flagged = false;
                                 flagNum++
                             }
-                            let number = numberOfBomb;
+                            let number = numOfBomb;
                             for(let i=0; i<height; i++){
                                 for(let j=0; j<width; j++){
                                     if(boxList[i][j].flagged){

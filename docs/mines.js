@@ -381,11 +381,11 @@ function listen() {
                         resetbtn.textContent = "Reset";         
                     }
                     if(!flagMode){
-                        if(boxList[i][j].bomb){
-                            if(!gameOver) stopGame();
-                        }
-                        else if(boxList[i][j].flagged){
+                        if(boxList[i][j].flagged){
                             return;
+                        } 
+                        else if(boxList[i][j].bomb){
+                            if(!gameOver) stopGame();
                         }
                         else {
                             open(i, j)

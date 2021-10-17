@@ -176,7 +176,8 @@ function createBomb() {
             i = Math.floor(Math.random() * height);
             j = Math.floor(Math.random() * width);
         }
-        boxList[i][j].bomb = true;
+        boxList[i][j].bomb = true; 
+        lista.push(`${i}${j}`);
     }
     // for(let i = 0; i<height; i++){
     //     for(let j = 0; j<width; j++){

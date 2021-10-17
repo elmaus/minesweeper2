@@ -380,14 +380,17 @@ function listen() {
                     if(!flagMode){
                         if(boxList[i][j].bomb){
                             if(!gameOver) stopGame();
+                        } 
+                        else if (boxList[i][j].flagged){
+                            return
                         }
                         else {
                             open(i, j)
                             if(!gameOver) tap.play();
-                            for(let i = 0; i<height; i++){
-                                for(let j = 0; j<width; j++){
-                                    if(boxList[i][j].open && !boxList[i][j].bomb && !boxList[i][j].flagged){
-                                        reveal(i, j);
+                            for(let k = 0; k<height; k++){
+                                for(let l = 0; l<width; l++){
+                                    if(boxList[k][l].open && !boxList[k][l].bomb && !boxList[k][l].flagged){
+                                        reveal(k, l);
                                     }
                                 }
                             }

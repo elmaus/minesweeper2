@@ -112,8 +112,7 @@ body {
     top: 0;
     left: 0;
     width:435px;
-    padding-left:50px;
-    padding-right:50px
+    padding:100px 50px;
     background-color: rgb(11, 6, 46, .7);
 }
 

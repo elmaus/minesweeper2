@@ -62,7 +62,9 @@ function stopGame() {
     gameOver = true;
     emoji.src = 'sad.png'
     for(let k=0; k<height; k++){
-        for(let l=0; l<width; l++){
+        for(let l=0; l<width; l++){ 
+            if(boxList[k][l].flagged){ 
+                boxList[k][l].tile.removeChild(boxList[k][l].flag)
             if(boxList[k][l].bomb){
                 clearInterval(timer);
                 boxList[k][l].tile.style.backgroundColor = "#fb5b5b";
@@ -248,7 +250,7 @@ function open(i, j){
         return;
     }
     boxList[i][j].open = true;
-    if(boxList[i][j].bomb){
+    if(boxList[i][j].bomb || boxList[i][j].flagged){
         return
     }
     if(boxList[i][j].number > 0){

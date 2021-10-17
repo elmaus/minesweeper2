@@ -65,6 +65,7 @@ function stopGame() {
         for(let l=0; l<width; l++){
             if(boxList[k][l].flagged){
                 boxList[k][l].tile.removeChild(boxList[k][l].flag); 
+                boxList[k][l].flagged = false;
                 boxList[k][l].open = true;
                 reveal(k, l);
             }
@@ -252,9 +253,11 @@ function open(i, j){
     if(boxList[i][j].open) {
         return;
     }
-    boxList[i][j].open = true;
+    boxList[i][j].open = true; 
+
     if(boxList[i][j].flagged){
         boxList[i][j].tile.removeChild(box[i][j].flag); 
+        boxList[i][j].flagged = false;
         boxList.open = true;
     }
     if(boxList[i][j].number > 0){
@@ -339,7 +342,8 @@ function reveal(i, j) {
             boxList[i][j].tile.style.backgroundColor = openColor; 
 
             if(boxList[i][j].flagged){ 
-                boxList[i][j].tile.removeChild(boxList[i][j].flag);
+                boxList[i][j].tile.removeChild(boxList[i][j].flag); 
+                boxList[i][j].flagged = false;
             }
             
             if(boxList[i][j].number == 1){

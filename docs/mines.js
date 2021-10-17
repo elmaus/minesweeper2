@@ -4,6 +4,7 @@ const mainDiv = document.querySelector('#main');
 const width = 10;
 const height = 12;
 const numOfBomb = 20;
+let flagNum = numberOfBomb;
 const openColor =  'black' //"rgb(11, 6, 46)"
 let numberOfOpened = 0;
 const boxList = [];
@@ -60,8 +61,8 @@ class Box {
 
 function stopGame() {
     gameOver = true;
-    numberOfOpened = 0; 
-    numberOfFlag.textContent = "00";
+    numberOfOpened = 0;
+    flagNum = numberOfBomb; 
     emoji.src = 'sad.png'
     for(let k=0; k<height; k++){
         for(let l=0; l<width; l++){
@@ -422,21 +423,33 @@ function listen() {
                         if(!gameOver){
                             if(!boxList[i][j].flagged){
                                 boxList[i][j].tile.appendChild(boxList[i][j].flag);
-                                boxList[i][j].flagged = true;
+                                boxList[i][j].flagged = true; 
+                                flagNum--
                             }else {
                                 boxList[i][j].tile.removeChild(boxList[i][j].flag);
                                 boxList[i][j].flagged = false;
+                                flagNum++
                             }
-                            let number = 0
+                            let number = numberOfBomb;
                             for(let i=0; i<height; i++){
                                 for(let j=0; j<width; j++){
                                     if(boxList[i][j].flagged){
-                                        number++;
-                                        print()
+                                        number--;
                                     }
                                 }
                             }
-                            number < 10 ? numberOfFlag.textContent = `0${number}` : numberOfFlag.textContent = number;
+                            if(flagNum < 10){
+                                numberOfFlag.textContent = `0${flagNum}`;
+                            }
+                            else if(flagNum < 0 && flagNum > -10){
+                                numberOfFlag.textContent = `-0${Math.abs(flagNum)}`;
+                            }
+                            else if(flagNum < 0 && flagNum < -9){
+                                numberOfFlag.textContent = '${flagNum}';
+                            }
+                            else {
+                                numberOfFlag.textContent = "00";
+                            }
                         }
                     }
                 })

@@ -71,7 +71,7 @@ function stopGame() {
                 boxList[k][l].open = true;
                 reveal(k, l);
             }
-            else if(boxList[k][l].bomb){
+            if(boxList[k][l].bomb){
                 clearInterval(timer);
                 boxList[k][l].tile.style.backgroundColor = "#fb5b5b";
                 let img = document.createElement('img');

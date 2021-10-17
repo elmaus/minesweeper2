@@ -62,9 +62,10 @@ function stopGame() {
     gameOver = true;
     emoji.src = 'sad.png'
     for(let k=0; k<height; k++){
-        for(let l=0; l<width; l++){ 
-            if(boxList[k][l].flagged){ 
+        for(let l=0; l<width; l++){
+            if(boxList[k][l].flagged){
                 boxList[k][l].tile.removeChild(boxList[k][l].flag)
+            }
             if(boxList[k][l].bomb){
                 clearInterval(timer);
                 boxList[k][l].tile.style.backgroundColor = "#fb5b5b";
@@ -382,16 +383,16 @@ function listen() {
                     if(!flagMode){
                         if(boxList[i][j].bomb){
                             if(!gameOver) stopGame();
-                        } 
-                        else if (boxList[i][j].flagged){
-                            return
+                        }
+                        else if(boxList[i][j].flagged){
+                            return;
                         }
                         else {
                             open(i, j)
                             if(!gameOver) tap.play();
                             for(let k = 0; k<height; k++){
                                 for(let l = 0; l<width; l++){
-                                    if(boxList[k][l].open && !boxList[k][l].bomb && !boxList[k][l].flagged){
+                                    if(boxList[k][l].open && !boxList[k][l].bomb){
                                         reveal(k, l);
                                     }
                                 }

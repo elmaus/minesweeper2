@@ -429,13 +429,15 @@ function listen() {
     }
 }
 
-btnflg.addEventListener('click', event => {
-    if(flagMode){ 
-        flagMode = false;
-        btnflg.textContent = "Mine";
-     }else { 
-        flagMode = true;
-        btnflg.textContent = "Flag";
+btnflg.addEventListener('click', event => { 
+    if(!gameOver){
+        if(flagMode){ 
+            flagMode = false;
+            btnflg.textContent = "Mine";
+        }else { 
+            flagMode = true;
+            btnflg.textContent = "Flag"; 
+        }
      }
 })
 

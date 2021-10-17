@@ -64,9 +64,10 @@ function stopGame() {
     for(let k=0; k<height; k++){
         for(let l=0; l<width; l++){
             if(boxList[k][l].flagged){
-                boxList[k][l].tile.removeChild(boxList[k][l].flag)
+                boxList[k][l].tile.removeChild(boxList[k][l].flag); 
+                reveal(k, l);
             }
-            if(boxList[k][l].bomb){
+            else if(boxList[k][l].bomb){
                 clearInterval(timer);
                 boxList[k][l].tile.style.backgroundColor = "#fb5b5b";
                 let img = document.createElement('img');

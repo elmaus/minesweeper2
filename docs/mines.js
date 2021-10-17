@@ -251,15 +251,18 @@ function open(i, j){
         return;
     }
     boxList[i][j].open = true;
-    if(boxList[i][j].bomb || boxList[i][j].flagged){
+    else if(boxList[i][j].flagged){
         return
     }
-    if(boxList[i][j].number > 0){
+    else if(boxList[i][j].number > 0){
         boxList[i][j].open = true;
         boxList[i][j].tile.textContent = boxList[i][j].number;
         return;
+    } 
+    else if (boxList[i][j].bomb){ 
+        return;
     }
-    if(i==0 && j>0 && j<width-1){
+    else if(i==0 && j>0 && j<width-1){
         boxList[i][j-1].number == 0 ? open(i, j-1) : boxList[i][j-1].open = true;        
         boxList[i+1][j-1].number == 0 ? open(i+1, j-1) : boxList[i+1][j-1].open = true;
         boxList[i+1][j].number == 0 ? open(i+1, j) : boxList[i+1][j].open = true

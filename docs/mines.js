@@ -22,7 +22,8 @@ let resetbtn = document.querySelector('#reset');
 let winAlert = document.querySelector('.win');
 let titlewin = document.querySelector('.title-win');
 let winbtn = document.querySelector('.winbtn');
-winAlert.style.display = 'none';
+winAlert.style.display = 'none'; 
+numberOfFlag.textContent = numOfBomb;
 
 const bangSound = new Audio('bang.mp3');
 const tap = new Audio('flip.mp3');

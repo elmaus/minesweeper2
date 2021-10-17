@@ -60,6 +60,7 @@ class Box {
 
 function stopGame() {
     gameOver = true;
+    numberOfOpened = 0;
     emoji.src = 'sad.png'
     for(let k=0; k<height; k++){
         for(let l=0; l<width; l++){
@@ -128,21 +129,24 @@ function win() {
 }
 
 function checkWin() {
-    let bmb = 0;
-    let opn = 0;
-    for(let i=0; i<height; i++){
-        for(let j=0; j<width; j++){
-            if(boxList[i][j].bomb){
-                bmb++
-            }
-            else {
-                if(boxList[i][j].open){
-                    opn++
+    if(!gameOver){
+        let bmb = 0;
+        let opn = 0;
+        for(let i=0; i<height; i++){
+            for(let j=0; j<width; j++){
+                if(boxList[i][j].bomb){
+                    bmb++
+                }
+                else {
+                    if(boxList[i][j].open){
+                        opn++
+                    }
                 }
             }
+     
         }
+        if(opn + bmb == 120) win();
     }
-    if(opn + bmb == 120) win();
 }
 function createGrid() {
     for(let i = 0; i<height; i++){

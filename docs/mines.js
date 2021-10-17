@@ -422,24 +422,30 @@ function listen() {
                     }else {
                         if(!gameOver){
                             if(!boxList[i][j].flagged){
-                                boxList[i][j].tile.appendChild(boxList[i][j].flag);
-                                boxList[i][j].flagged = true; 
-                                flagNum--
+                                if(flagNum > 1){
+                                    boxList[i][j].tile.appendChild(boxList[i][j].flag);
+                                    boxList[i][j].flagged = true; 
+                                    flagNum--;
+                                }
                             }else {
-                                boxList[i][j].tile.removeChild(boxList[i][j].flag);
-                                boxList[i][j].flagged = false;
-                                flagNum++
+                                if(flagNum < numOfBomb){
+                                    boxList[i][j].tile.removeChild(boxList[i][j].flag);
+                                    boxList[i][j].flagged = false;
+                                    flagNum++;
+                                }
                             }
                             
 
                             if(flagNum < 10){
                                 numberOfFlag.textContent = `0${flagNum}`;
-                            }
+                            } 
+                            else if(flagNum > 9) {
+                                numberOfFlag.textContent = flagNum;
                             else if(flagNum < 0 && flagNum > -10){
                                 numberOfFlag.textContent = `-0${flagNum}`;
                             }
                             else if(flagNum < 0 && flagNum < -9){
-                                numberOfFlag.textContent = '${flagNum}';
+                                numberOfFlag.textContent = '${Math.abs(flagNum)}';
                             }
                             else {
                                 numberOfFlag.textContent = "00";

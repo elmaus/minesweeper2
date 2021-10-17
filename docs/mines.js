@@ -252,9 +252,9 @@ function open(i, j){
     }
     boxList[i][j].open = true;
     if(boxList[i][j].flagged){
-        return
+        boxList[i][j].tile.removeChild(box[i][j].flag);
     }
-    else if(boxList[i][j].number > 0){
+    if(boxList[i][j].number > 0){
         boxList[i][j].open = true;
         boxList[i][j].tile.textContent = boxList[i][j].number;
         return;

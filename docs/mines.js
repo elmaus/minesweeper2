@@ -478,6 +478,7 @@ resetbtn.addEventListener('click', event => {
         seconds.textContent = '00';
         numberOfFlag.textContent = '00';
         numberOfOpened = 0;
+        flagNum = numBomb;
         resetbtn.textContent = '-----'
         nf = 0;
         gameStart = false;

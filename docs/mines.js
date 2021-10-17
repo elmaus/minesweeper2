@@ -416,7 +416,10 @@ function listen() {
                         }
                         else {
                             open(i, j)
-                            if(!gameOver) tap.play();
+                            if(!gameOver) { 
+                                tap.currentTime = 0;
+                                tap.play();
+                            }
                             for(let k = 0; k<height; k++){
                                 for(let l = 0; l<width; l++){
                                     if(boxList[k][l].open && !boxList[k][l].bomb){
